@@ -1,1 +1,4 @@
 *.pdf
+dist/
+node_modules/
+.cache/

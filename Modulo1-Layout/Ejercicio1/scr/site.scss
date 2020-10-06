@@ -1,0 +1,64 @@
+//Width por defecto de las columnas.
+$defaultWidth: 100px;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+//Inicializo la variable contenedor con el valor numerico del primer contenedor.
+$contenedor: 1;
+
+//Recorro una lista de 3 colores.
+@each $var in #f44336, #3f51b5, #4caf50 {
+    //Estilos del conteiner-x
+    .container-#{$contenedor} {
+        //Se le da una estructura de Grid.
+        display: grid;
+        grid-template-columns: repeat(4, $defaultWidth) $defaultWidth * 2 repeat(4, $defaultWidth);
+        grid-template-rows: $defaultWidth;
+        gap: 10px;
+
+        //Se añade margen al contenedor
+        margin: 10px;
+        color:white;
+
+        //Se inicializa el porcentaje incial en al cual aumentara y decrementara el color.
+        $porcentajeInicial: 5%;
+
+        //Se crea un for para recorrer los distintos elementos Darken y Lighten.
+        @for $f from 1 through 4 {
+            //Se oscurecen los contenedores Darken
+            .darken-#{$f} {
+                background-color: darken($var, $porcentajeInicial);
+                color: invert($var);
+            }
+
+            //Se aclaran los contenedores lighten
+            .lighten-#{$f} {
+                background-color: lighten($var, $porcentajeInicial);
+                color: invert($var);
+            }
+
+            //Se aumenta el porcentaje un 5% a medida que se incrementa el contenedor al cual se le asigna el estilo.
+            $porcentajeInicial: $porcentajeInicial + 5%;
+        }
+
+        //Se asigana el valor base al contenedor
+        .base-color {
+            background-color: #{$var};
+        }
+    }
+
+    //Se incrementa en 1 el indice del contenedor.
+    $contenedor: $contenedor + 1;
+}
+
+.box {
+    // Se le da una extructura flex, asi sera mas facil alinearlo en el centro el item que contiene
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
