@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Chilanka&family=Source+Code+Pro:wght@500&display=swap');
+
+// Variables con los datos que cambiaran dependiendo del tema utilizado
+$fontPrimary: 'Chilanka', cursive;
+$fontSecundary: "Source Code Pro", monospace;
+$ShadowValues: -5px 10px 8px gray;
+$bColorBase:#fe0000;
+$bColorImportant:#3b0e0c;
+$bColorWarning:#ffbfcd;
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .content {
+        h1 {
+            padding: 20px;
+        }
+
+        .base {
+            background-color: $bColorBase;
+        }
+
+        .important {
+            background-color: $bColorImportant;
+        }
+
+        .warning {
+            background-color: $bColorWarning;
+        }
+
+        .content-border {
+            border: 1px solid grey;
+            width: 200px;
+        }
+
+        .content-font {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            padding-right: 0;
+
+            p {
+                font-size: 2rem;
+                margin: 24px 0;
+            }
+
+            .font-primary {
+                font-family: $fontPrimary;
+            }
+
+            .font-secundary {
+                font-family: $fontSecundary;
+            }
+        }
+    }
+}

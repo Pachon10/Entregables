@@ -1,0 +1,42 @@
+//Variable de control, la cual indica que Theme sera usado
+$themeSelect: 1;
+
+@if $themeSelect == 1 {
+    @import url("./_tema1.scss");
+}@else{
+    @import url("./_tema2.scss");
+}
+
+body {
+    font-family: sans-serif;
+}
+
+//Estilos genericos y por tanto seran usados para varios temas.
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .content {
+        h1 {
+            padding: 20px;
+        }
+
+        .content-border {
+            border: 1px solid grey;
+            width: 200px;
+        }
+
+        .content-font {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            padding-right: 0;
+
+            p {
+                font-size: 2rem;
+                margin: 24px 0;
+            }
+        }
+    }
+}
