@@ -10,15 +10,7 @@ $bColorWarning:#ffbfcd;
 
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
     .content {
-        h1 {
-            padding: 20px;
-        }
-
         .base {
             background-color: $bColorBase;
         }
@@ -31,23 +23,12 @@ main {
             background-color: $bColorWarning;
         }
 
-        .content-border {
-            border: 1px solid grey;
-            width: 200px;
+        .content-shadow {
+            box-shadow: $ShadowValues;
         }
 
         .content-font {
-            display: flex;
-            flex-direction: column;
-            padding-left: 0;
-            padding-right: 0;
-
-            p {
-                font-size: 2rem;
-                margin: 24px 0;
-            }
-
-            .font-primary {
+             .font-primary {
                 font-family: $fontPrimary;
             }
 

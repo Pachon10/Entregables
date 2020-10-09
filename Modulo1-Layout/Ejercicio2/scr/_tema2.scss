@@ -16,15 +16,8 @@ body {
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
     .content {
-        h1 {
-            padding: 20px;
-        }
-
+       
         .base {
             background-color: $bColorBase;
         }
@@ -38,9 +31,7 @@ main {
         }
 
         .content-border {
-            border: 1px solid grey;
             border-radius: $borderRadiusSize;
-            width: 200px;
         }
 
         .content-shadow {
@@ -48,16 +39,6 @@ main {
         }
 
         .content-font {
-            display: flex;
-            flex-direction: column;
-            padding-left: 0;
-            padding-right: 0;
-
-            p {
-                font-size: 2rem;
-                margin: 24px 0;
-            }
-
             .font-primary {
                 font-family: $fontPrimary;
             }
