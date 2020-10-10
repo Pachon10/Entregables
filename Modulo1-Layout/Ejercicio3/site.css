@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Margen inferior de 10px para que no quede tan separado de la barra del menu */
+.logo h1{
+    margin-bottom: 10px;
+}
+
+
+.menu ul {
+    display: flex;
+    /* Se utiliza el wrap, para que a medida que se haga mas pequeño este vaya cogiendo el espacio de abajo */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #006a7b;
+    /* Se utilizar el min-heigh para que cuando el flex vaya ocupando el espacio de abajo este vaya creciendo */
+    min-height: 50px;
+    padding: 0;
+    list-style: none;
+    width: 100vw;
+}
+
+.menu ul li {
+    /* Se le proporciona un Flex para que el atributo a se quede centrado, ya que no se ha pedido que el A ocupe el ancho de completo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+}
+
+.menu ul li:hover {
+    background-color: #2f4858;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width: 425px) {
+    body {
+        /* Se proporciona un padding a los laterales para que quede seprado por los margenes */
+        padding: 0px 20px;
+    }
+
+    .menu{
+        /* Se le proporciona flex ya que si no el ul se extiende hasta el final y no deja el padding de 20px */
+        display:flex
+    }
+
+    .menu ul li {
+        /* Se le proporciona un width: 100% para que este ocupe el maximo que pueda y empuje a los demas li hacia abajo */
+        width: 100%;
+    }
+}
