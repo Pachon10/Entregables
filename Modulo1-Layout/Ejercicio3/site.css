@@ -23,10 +23,6 @@ body {
 }
 
 .menu ul li {
-    /* Se le proporciona un Flex para que el atributo a se quede centrado, ya que no se ha pedido que el A ocupe el ancho de completo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100px;
     height: 50px;
 }
@@ -36,8 +32,13 @@ body {
 }
 
 .menu ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     color: white;
+    width: 100%;
+    height: 100%;
 }
 
 @media screen and (max-width: 425px) {
@@ -52,7 +53,7 @@ body {
     }
 
     .menu ul li {
-        /* Se le proporciona un width: 100% para que este ocupe el maximo que pueda y empuje a los demas li hacia abajo */
+        /* Se le proporciona un width: 100% para que este ocupe el maximo y empuje a los demas li hacia abajo */
         width: 100%;
     }
 }
