@@ -1,0 +1,75 @@
+/* Variable para el color verde */
+:root {
+    --colorGreen: #7abe47;
+}
+
+body {
+    /* Le doy un color gris al body para resaltar los card */
+    background-color: #eeeeee;
+    /* Le doy un padding para que no quede ajustado a los margenes */
+    padding: 20px;
+    margin: 0;
+    font-family: 'calibri',sans-serif;
+}
+
+.carousel-card {
+    /* Tal y como se pide en el ejercicio añado un display grid para las card */
+    display: grid;
+    /* Como he utilizado 4, creo 4 celdas del mismo tamaño para contenerlas */
+    grid-template-columns: repeat(4, 300px);
+    /* dejo un separacion de 20px entre ellas */
+    gap: 20px;
+    font-weight: lighter;
+}
+
+.card {
+    /* Las card seran flex por si crecieran esta mantenisen su forma */
+    display: flex;
+    flex-wrap: wrap;
+    /* Utilizo un baselina para que el texto siempre este alineado */
+    align-content: baseline;
+}
+
+.card .card-img{
+    /* Indico que la caja que contendra las imagenes tendran siemrpe un tamaño de 200px para que no se deformen. */
+    height: 200px;
+}
+
+/* indico que su ancho y altura para que siempre ocupe el 100% de la caja  */
+.card .card-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.card .card-content {
+    padding: 10px;
+    border: 1px solid #c6c6c6;
+    background-color: white;
+}
+
+.card .card-content .card-title h2{
+    /* Se le proporciona un font-weight: inherit para que sea igual que el resto */
+    font-weight: inherit;
+}
+
+.card .card-content .card-text p{
+    margin-bottom: 2em;
+}
+
+.card .card-content .card-info {
+    text-align: end;
+}
+
+.card .card-content .card-info .card-date-info {
+    color: var(--colorGreen);
+}
+
+.card .card-content .card-button button {
+    background-color: var(--colorGreen);
+    color:white;
+    width: 100%;
+    height: 40px;
+    border: 1px solid;
+    font-size: 1rem;
+    cursor: pointer;
+}
