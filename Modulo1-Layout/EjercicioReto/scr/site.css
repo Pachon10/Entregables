@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+    background-color: #141414;
+    color: white;
+    margin: 0;
+    font-family: "Jost", sans-serif;
+}
+
+header,
+main {
+    padding: 20px;
+}
+
+/* header */
+
+header {
+    display: flex;
+    /* Space between para dejar los elementos a ambos lados */
+    justify-content: space-between;
+    /* Se le indica el mismo color de fondo que el sitio web para que al bajar no aparezca transaprente */
+    background-color: #141414;
+    /* Se le indica un posicion sticky para que este siempre este visible */
+    position: sticky;
+    top: 0;
+}
+
+header .header-logo,
+header .header-buttons {
+    /* Display flex para asi poder centrarlo facilmente los items */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .header-logo .platform-title {
+    font-size: 2rem;
+    padding-left: 15px;
+}
+
+header .header-buttons div {
+    padding: 15px;
+    cursor: pointer;
+}
+
+/* Al pasar por el boton este cambie de color y le cambie los bordes */
+header .header-buttons div:hover {
+    border-radius: 5px;
+    color: blue;
+    background-color: white;
+}
+
+/* main */
+main {
+    display: flex;
+    /* Flex direction column para que se alineen como un columna y ocupen todo el ancho disponible */
+    flex-direction: column;
+}
+
+main .section-title {
+    padding-top: 10px;
+}
+
+/* Se añade el contenido '5' */
+main .section-title #top-text::before {
+    content: "5";
+    font-weight: bold;
+}
+
+main .top,
+main .first,
+main .second {
+    display: flex;
+    /*Se le añade un center para que al añadirle el hover y la caja crezca en el 
+    eje Y pero se mantegan en el mismo eje X que el resto de caja */
+    align-items: center;
+}
+
+.top {
+    flex-direction: row-reverse;
+}
+
+.top .top-item {
+    min-width: 225px;
+    flex-grow: 1;
+}
+
+.first .item,
+.second .item {
+    min-width: 250px;
+    flex-grow: 1;
+    margin-right: 5px;
+}
+
+/* Crea una animacion simplemente para que quede esteticamente mejor al realizar el hover */
+@keyframes upSize {
+    from {
+        width: 20%;
+    }
+    to {
+        width: 30%;
+    }
+}
+
+.first .item:hover,
+.second .item:hover {
+    /* Animacion anteriormente creada para que le da una sensacion de que crece lentamente */
+    animation-name: upSize;
+    animation-duration: 1s;
+    /* una vez que acabe la animacion que se mantenga en el tamaño objetivo */
+    width: 30%;
+}
+
+.first .item img,
+.second .item img,
+.top .top-item img {
+    width: 100%;
+}
+
+/* Medias */
+@media screen and (max-width: 1569px) {
+    /* Se da un Wrap para que baje las cajas al quedarse sin espacio */
+    main .first,
+    main .second {
+        flex-wrap: wrap;
+    }
+ 
+    /*Se le elimina la animacion y el cambio de tamaño ya que este 
+    da problemas con los tamaños y se vuelve un poco loco
+    (No he encontrado forma de arreglarlo si no voy resolucion por resolucion 
+    cambiando el tamaño, no se si existe forma de acerlo.
+    Si hay forma me gustaria saberlo :-). ) */
+    .first .item:hover,
+    .second .item:hover {
+        animation-name: none;
+        width: inherit;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    header .header-logo .platform-title {
+        display: none;
+    }
+
+    /* Seleciono los 2 primeros hijos y los oculto */
+    .top-item:nth-child(-n + 2) {
+        display: none;
+    }
+
+    /* Cambio el numero 5 por 3 */
+    main .section-title #top-text::before {
+        content: "3";
+    }
+}
+
+@media screen and (max-width: 715px) {
+    main .top {
+        flex-wrap: wrap-reverse;
+    }
+}
