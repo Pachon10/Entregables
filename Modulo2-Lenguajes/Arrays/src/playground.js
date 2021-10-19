@@ -3,21 +3,21 @@ console.log(`Origin value: ${varArray}`);
 
 /*------------- Head ----------------*/
 
-const head = ([first]) => { return first};
+const head = ([first]) => first;
 
 console.log("-------HEAD-------");
 console.log(head(varArray));
 
 /*------------- Tail ----------------*/
 
-const tail = ([,...rest]) => { return rest; }; 
+const tail = ([,...rest]) => rest;
 
 console.log("-------Tail-------");
 console.log(tail(varArray));
 
 /*------------- Init ----------------*/
 
-const init = (array = []) => {  return array.slice(0,-1); };
+const init = (array = []) => array.slice(0,-1);
 
 console.log("-------Init-------");
 console.log(init(varArray));
@@ -26,8 +26,8 @@ console.log(init(varArray));
  ------------- Last ----------------
 */
 
-const last = (array = []) => { return array[array.length -1]; };
-const lastSlice = (array = []) => { return array.slice(-1); };
+const last = (array = []) => array[array.length -1];
+const lastSlice = (array = []) => array.slice(-1); 
 
 console.log("-------Last-------");
 console.log(last(varArray));
