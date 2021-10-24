@@ -1,21 +1,35 @@
-<p>login works!</p>
-<form [formGroup] = "loginForm">
-  <p>
-    <mat-form-field appearance="legacy">
-      <mat-label>User Name</mat-label>
-      <input matInput formControlName="userName" placeholder="Placeholder">
-      <mat-icon matSuffix>perm_identity</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="legacy">
-      <mat-label>Password</mat-label>
-      <input matInput formControlName="password" type="password" placeholder="Placeholder">
-      <mat-icon matSuffix>fingerprint</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-  <button (click)="login()">Guardar</button>
-</form>
-
+<div class="main">
+  <div class="contentLogin">
+    <p>
+      <ngb-alert [type]="'info'" [dismissible]="false" >
+      <p> Username: master8@lemoncode.net</p>
+        <p> Password: 12345678</p>
+      </ngb-alert>
+    </p>
+    <h1>Login</h1>
+    <form [formGroup] = "loginForm">
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>User Name</mat-label>
+          <input matInput formControlName="userName" placeholder="Placeholder">
+          <mat-icon matSuffix>perm_identity</mat-icon>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" placeholder="Placeholder">
+          <mat-icon matSuffix>fingerprint</mat-icon>
+        </mat-form-field>
+      </p>
+      <p>
+        <button mat-flat-button color="primary" (click)="login()">Login</button>
+      </p>
+    </form>
+    <p *ngIf="error">
+    <ngb-alert [type]="'danger'" [dismissible]="false">
+      Username or password is incorrect
+    </ngb-alert>
+    </p>
+  </div>
+</div>

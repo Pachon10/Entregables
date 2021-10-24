@@ -12,12 +12,14 @@ export class LoginComponent implements OnInit {
    loginForm: FormGroup
    userNameControl: FormControl;
    passwordControl: FormControl;
+   error :boolean;
 
   constructor(private loginService : AuthService, private fb: FormBuilder, private router: Router)
   {
     this.loginForm = new FormGroup({});
     this.userNameControl = new FormControl();
     this.passwordControl = new FormControl();
+    this.error = false;
 
     this.createLoginForm();
   }
@@ -40,6 +42,8 @@ export class LoginComponent implements OnInit {
         window.location.reload();
       });
     }
+
+    this.error=true;
   }
 
 }

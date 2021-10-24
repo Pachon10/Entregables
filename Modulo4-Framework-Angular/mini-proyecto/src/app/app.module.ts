@@ -19,6 +19,11 @@ import { CustomersComponent } from './customers/customers.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProfileComponent } from './profile/profile.component';
+import {MatButtonModule} from '@angular/material/button';
+import { LogoComponent } from './layout/logo/logo.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,18 +38,23 @@ import {MatInputModule} from '@angular/material/input';
     DashboardComponent,
     UsersComponent,
     ProvidersComponent,
-    CustomersComponent
+    CustomersComponent,
+    ProfileComponent,
+    LogoComponent,
+    FooterComponent
   ],
   imports: [
-    MatMenuModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    MatMenuModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

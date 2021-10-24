@@ -1,7 +1,9 @@
 <div class="header">
   <app-menu-public *ngIf="!LoginEntity.IsLogged"></app-menu-public>
   <app-menu-private *ngIf="LoginEntity.IsLogged"></app-menu-private>
+  <app-logo></app-logo>
 </div>
 <div class="container">
   <router-outlet></router-outlet>
 </div>
+<app-footer></app-footer>

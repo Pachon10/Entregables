@@ -1,16 +1,16 @@
-<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+<button mat-icon-button class="mat-focus-indicator mat-menu-trigger mat-icon-button mat-button-base" [matMenuTriggerFor]="menu" aria-label="Menu">
   <mat-icon>more_vert</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item routerLink="home">
+  <button mat-menu-item routerLink="home" routerLinkActive="selected">
     <mat-icon>home</mat-icon>
     <span>Home</span>
   </button>
-  <button mat-menu-item routerLink="login">
+  <button mat-menu-item routerLink="login" routerLinkActive="selected">
     <mat-icon>lock</mat-icon>
     <span>Login</span>
   </button>
-  <button mat-menu-item routerLink="about">
+  <button mat-menu-item routerLink="about" routerLinkActive="selected">
     <mat-icon>info</mat-icon>
     <span>Acerca de</span>
   </button>

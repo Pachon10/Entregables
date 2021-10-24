@@ -25,7 +25,7 @@ export class AuthService {
 
   login(username: string, password: string): boolean
   {
-    if(username == "curso" && password == "angular")
+    if(username == "master8@lemoncode.net" && password == "12345678")
     {
       this.loginEntity.IsLogged = true;
       this.loginEntity.Username = username;

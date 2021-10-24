@@ -5,6 +5,7 @@ import { CustomersComponent } from './customers/customers.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 import { ProvidersComponent } from './providers/providers.component';
 import { UsersComponent } from './users/users.component';
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent},
   { path: 'providers', component: ProvidersComponent},
   { path: 'customers', component: CustomersComponent},
+  { path: 'profile', component: ProfileComponent},
   { path: '', redirectTo: 'home',  pathMatch: 'full'}
 ];
 

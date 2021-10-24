@@ -1,34 +1,34 @@
-<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+<button mat-icon-button class="mat-focus-indicator mat-menu-trigger mat-icon-button mat-button-base" [matMenuTriggerFor]="menu" aria-label="Menu">
   <mat-icon>more_vert</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>
+  <button mat-menu-item routerLink="dashboard" routerLinkActive="selected">
     <mat-icon>dashboard</mat-icon>
     <span>Dashboard</span>
   </button>
-  <button mat-menu-item>
+  <button mat-menu-item routerLink="users" routerLinkActive="selected">
     <mat-icon>supervisor_account</mat-icon>
     <span>Users</span>
   </button>
-  <button mat-menu-item>
-    <mat-icon>face</mat-icon>
-    <span>Providers</span>
-  </button>
-  <button mat-menu-item>
+  <button mat-menu-item routerLink="providers" routerLinkActive="selected">
     <mat-icon>work</mat-icon>
-    <span>Customers</span>
+    <span>CRUD</span>
   </button>
-  <button mat-menu-item>
+  <button mat-menu-item routerLink="customers" routerLinkActive="selected">
+    <mat-icon>face</mat-icon>
+    <span>Galeria</span>
+  </button>
+  <button mat-menu-item routerLink="profile" routerLinkActive="selected">
     <mat-icon>perm_identity</mat-icon>
     <span>Profile</span>
   </button>
   <button mat-menu-item disabled>
     <mat-icon>info</mat-icon>
     <span>
-      Hola, curso
+      Hola, {{userName}}
     </span>
   </button>
-  <button mat-menu-item>
+  <button (click)="logout()" mat-menu-item routerLinkActive="selected">
     <mat-icon>lock_open</mat-icon>
     <span>Logout</span>
   </button>

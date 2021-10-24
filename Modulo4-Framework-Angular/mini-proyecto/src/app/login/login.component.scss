@@ -1,0 +1,23 @@
+.main
+{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.contentLogin{
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form{
+  p{
+    display: flex;
+    justify-content: center;
+    .mat-form-field{
+        width: 100%;
+    }
+  }
+}
