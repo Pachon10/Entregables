@@ -1,20 +1,20 @@
-import { mapToCollection } from 'common/mappers';
-import * as apiModel from './api/project.api-model';
+import { mapToCollection } from '../../common/mappers/collection.mapper';
 import * as viewModel from './project.vm';
+import { EmployeeSummary, Project } from './project.vm';
 
 const mapEmployeeSummaryFromApiToVm = (
-  employeeSummary: apiModel.EmployeeSummary
+  employeeSummary: EmployeeSummary
 ): viewModel.EmployeeSummary => ({
   ...employeeSummary,
 });
 
 const mapEmployeeSummaryListFromApiToVm = (
-  employeeSummary: apiModel.EmployeeSummary[]
+  employeeSummary: EmployeeSummary[]
 ): viewModel.EmployeeSummary[] =>
   mapToCollection(employeeSummary, es => mapEmployeeSummaryFromApiToVm(es));
 
 export const mapProjectFromApiToVm = (
-  project: apiModel.Project
+  project: Project
 ): viewModel.Project => {
   return Boolean(project)
     ? {

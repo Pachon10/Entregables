@@ -1,7 +1,7 @@
 import React from 'react';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import { fireEvent } from '@testing-library/react';
-import { renderWithRouter } from 'common/test';
+import { renderWithRouter } from '../../../test';
 import { Route } from 'react-router-dom';
 import { ItemComponent, ClassesProps } from './item.component';
 import { DashboardItemProps } from '../dashboard.vm';
